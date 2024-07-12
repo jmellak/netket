@@ -207,7 +207,7 @@ class MetropolisSamplerNumpy(MetropolisSampler):
     ) -> Tuple[jnp.ndarray, MetropolisNumpySamplerState]:
 
         samples = np.empty(
-            (chain_length, sampler.n_chains, sampler.hilbert.size), dtype=sampler.dtype
+            (chain_length, sampler.n_chains_per_rank, sampler.hilbert.size), dtype=sampler.dtype
         )
 
         for i in range(chain_length):

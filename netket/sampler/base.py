@@ -128,13 +128,13 @@ class Sampler(abc.ABC):
                 "\n"
             )
 
-        # workaround Jax bug under pmap
-        # might be removed in the future
-        if type(self.machine_pow) != object:
-            if not np.issubdtype(numbers.dtype(self.machine_pow), np.integer):
-                raise ValueError(
-                    f"machine_pow ({self.machine_pow}) must be a positive integer"
-                )
+        # # workaround Jax bug under pmap
+        # # might be removed in the future
+        # if type(self.machine_pow) != object:
+        #     if not np.issubdtype(numbers.dtype(self.machine_pow), np.integer):
+        #         raise ValueError(
+        #             f"machine_pow ({self.machine_pow}) must be a positive integer"
+        #         )
 
     @property
     def n_chains(self) -> int:
